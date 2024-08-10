@@ -1,0 +1,12 @@
+# An Introduction to Data Engineering
+- **Hadoop** was a technology created in the early 2000’s at **Yahoo** as part of a search engine project that wanted to index 1 billion web pages.
+- **Spark** showed significant increases in performance when working with large datasets due to the fact that it did most processing in-memory, significantly reducing the amount of reading and writing to and from disks.
+- A **data lake** is a centralized repository that allows you to store all your structured and unstructured data at any scale. 
+- You can store your data as-is, without having to first structure the data, and run different types of analytics—from dashboards and visualizations to big data processing, real-time analytics, and machine learning to guide better decisions.
+- With a **Data Mesh** architecture, the idea is to make the teams that generate the data responsible for creating an analytics version of the data, and to then making that data easily accessible to the rest of the organization without needing to make multiple copies of the data.
+- A data mesh implementation meant a change to the processes of how operational data was converted into analytical data, and along with it, the persona’s that were responsible for the data. 
+- A Data Mesh implementation was not just a technical implementation, but rather a change to the culture and operation of teams within an organization. 
+- Whereas in many organizations large scale analytics had been done by a centralized team, with a data mesh approach the team that owns an application that generates data must productize that data to make it available to the rest of the business.
+- **Cloud computing** enables scalability, cost efficiency, security and automation that most companies find impossible to achieve within their own data centers, and this applies to the area of data analytics as well.
+- **AWS** was launched in 2006. Amazon Simple Storage Service (Amazon S3). 
+- A **sandbox account** is an account isolated from your corporate production systems with relevant guardrails and governance in place, and is used by many organizations to provide a safe space for teams or individual developers to experiment with cloud services.
