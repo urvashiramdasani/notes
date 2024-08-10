@@ -3,13 +3,13 @@
 - Containers solve the problem of making software portable so that applications can run on multiple platforms.
 - A container, powered by the containerization engine, is a standard unit of software that encapsulates the application code, runtime, system tools, system libraries, and settings necessary for programmers to build, ship, and run applications efficiently.
 
-![Why Use Containers?](<Screenshot 2024-06-10 at 3.22.39 PM.png>)
+![Why Use Containers?](../Docker/assets/Why-Use-Containers.png)
 
 - Operations and underlying infrastructure issues are no longer blockers. 
 - You can quickly move applications from your laptop to a testing environment, from a staging environment to a production environment, from a physical machine to a virtual machine, or a private cloud or public cloud, and always know that your application will work correctly. 
 - A container can be small, just tens of megabytes, and developers can almost instantly start containerized applications.
 
-![Container Characteristics](<Screenshot 2024-06-10 at 3.24.16 PM.png>)
+![Container Characteristics](../Docker/assets/Container-Characteristics.png)
 
 - Docker is a robust platform and the most popular container platform today. 
 - Podman is a daemon-less container engine that is more secure than Docker. 
@@ -43,7 +43,7 @@
     - Perform standard desktop or limited functions.
 
 ## Building and Running Container Images
-![Docker Container Creation Process](<Screenshot 2024-06-10 at 7.46.10 PM.png>)
+![Docker Container Creation Process](../Docker/assets/Container-creation.png)
 ![Docker Build Command](<Screenshot 2024-06-10 at 7.47.20 PM.png>)
 ![Docker Image Verification](<Screenshot 2024-06-10 at 7.47.49 PM.png>)
 ![Docker Commands](<Screenshot 2024-06-10 at 7.49.48 PM.png>)
