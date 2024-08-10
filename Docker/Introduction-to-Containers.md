@@ -44,9 +44,9 @@
 
 ## Building and Running Container Images
 ![Docker Container Creation Process](../Docker/assets/Container-creation.png)
-![Docker Build Command](<Screenshot 2024-06-10 at 7.47.20 PM.png>)
-![Docker Image Verification](<Screenshot 2024-06-10 at 7.47.49 PM.png>)
-![Docker Commands](<Screenshot 2024-06-10 at 7.49.48 PM.png>)
+![Docker Build Command](../Docker/assets/Docker-Build.png)
+![Docker Image Verification](../Docker/assets/Docker-Image-Verification.png)
+![Docker Commands](../Docker/assets/Docker-commands.png)
 
 ## Docker Objects
 - Docker contains objects such as Dockerfile, images, container, network, storage volumes, and other objects, such as plugins and add-ons. 
@@ -67,7 +67,7 @@
 - A repository is a group of related container images. 
 - And the tag provides information about a specific version or variant of an image.
 
-![Container Image Naming](<Screenshot 2024-06-10 at 8.13.37 PM.png>)
+![Container Image Naming](../Docker/assets/Container-Image-Naming.png)
 
 - A Docker container is a runnable instance of an image. 
 - You can use the Docker API or CLI to create, start, stop, or delete an image. 
@@ -96,7 +96,7 @@
 - First, developers build and push the images using automation or a build pipeline into a registry, where Docker stores these images. 
 - Then, local machines, cloud systems, and on-premises systems can pull those images.
 
-![Registry Access](<Screenshot 2024-06-10 at 9.18.33 PM.png>)
-![Docker Architecture](<Screenshot 2024-06-10 at 9.19.48 PM.png>)
-![Docker CLI](<Screenshot 2024-06-10 at 9.41.36 PM.png>)
-![Container Basics](<Screenshot 2024-06-10 at 9.43.07 PM.png>)
+![Registry Access](../Docker/assets/Registry-Access.png)
+![Docker Architecture](../Docker/assets/Docker-Architecture.png)
+![Docker CLI](../Docker/assets/Cheatsheet.png)
+![Container Basics](../Docker/assets/Glossary.png)
