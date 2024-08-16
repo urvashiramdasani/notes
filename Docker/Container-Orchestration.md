@@ -47,14 +47,14 @@
 - It is easily portable across clouds and on-premises
 - Kubernetes facilitates declarative management in which it automatically performs the necessary operations towards achieving the called for state.
 
-![What Kubernetes is not](<Screenshot 2024-06-25 at 10.12.38 AM.png>)
-![Kubernetes Concepts](<Screenshot 2024-06-25 at 10.14.25 AM.png>)
-![Kubernetes Concepts](<Screenshot 2024-06-25 at 10.15.11 AM.png>)
-![Kubernetes Capabilities](<Screenshot 2024-06-25 at 10.16.48 AM.png>)
-![Kubernetes Capabilities](<Screenshot 2024-06-25 at 10.18.21 AM.png>)
-![Kubernetes Capabilities](<Screenshot 2024-06-25 at 10.19.45 AM.png>)
-![Kubernetes Ecosystem](<Screenshot 2024-06-25 at 10.20.51 AM.png>)
-![Kubernetes Ecosystem](<Screenshot 2024-06-25 at 10.22.43 AM.png>)
+![What Kubernetes is not](../Docker/assets/What-Kubernetes-is-not.png)
+![Kubernetes Concepts](../Docker/assets/Kubernetes-Concepts-2.png)
+![Kubernetes Concepts](../Docker/assets/Kubernetes-Concepts.png)
+![Kubernetes Capabilities](../Docker/assets/Kubernetes-Capabilities-2.png)
+![Kubernetes Capabilities](../Docker/assets/Kubernetes-Capabilities-3.png)
+![Kubernetes Capabilities](../Docker/assets/Kubernetes-Capabilities.png)
+![Kubernetes Ecosystem](../Docker/assets/Kubernetes-Ecosystem.png)
+![Kubernetes Ecosystem](../Docker/assets/Kubernetes-Ecosystem-2.png)
 
 # Kubernetes Architecture
 - A deployment of Kubernetes is called a Kubernetes cluster. 
