@@ -88,3 +88,100 @@
 - A central data catalog that can be used to keep a searchable record of all the datasets in the data lake
 - Policies that ensure useful metadata is added to all the entries in the data catalog, and policies for ensuring that only high-quality data is allowed to be added to the data catalog
 - When we talk about a central catalog, we are generally referring to a business data catalog, and the business catalog is usually associated with one or more technical catalogs.
+
+## Business Data Catalog
+- The business data catalog (often referred to just as the data catalog) is a central repository that stores metadata about the different datasets in your environment. 
+- The purpose of the catalog is to enable users across your organization to be able to discover available datasets, and to learn more about those datasets through the associated metadata.
+- the details about each of the fields in the dataset is also included in the catalog. 
+- The data catalog also captures certain metadata automatically, such as date/time of when the dataset was last updated, a data quality score that can be automatically imported from the data quality tool, and the popularity of the dataset based on how many other users have requested access to the dataset. 
+- It is also possible to have the lineage and profile of the dataset stored in the data catalog, giving other users a better understanding of how this data was generated.
+- Popular data catalog solutions outside of AWS include the **Collibra Data Catalog, the Informatica Enterprise Data Catalog, Atlan, and Amundsen (an open-source data catalog).**
+
+## Technical Data Catalog
+- Technical catalogs are those that map data files in the data lake (such as files stored in Amazon S3 storage) to a logical representation of those files in the form of databases and tables. 
+- The Hive Metastore is a well-known technical catalog that stores metadata for Hive tables (such as the table schema, location, and partition information). 
+- These are primarily technical attributes of the table, and the AWS Glue data catalog is an example of a Hive-compatible Metastore (meaning analytic services designed to work with a Hive Metastore catalog can use the Glue catalog). 
+- Services such as Amazon Athena, AWS Glue ETL, and Amazon EMR enable you to run queries on data in an Amazon S3 data lake, just by referencing a database and table name and without needing to know the actual location in S3. 
+- When you run a query on a specific database / table, the analytic service references the technical catalog to determine where the underlying files that make up this table are located in Amazon S3. 
+- In addition, the analytic service can also access information on the schema of the table (column names and column types), as well as the on format of those files (such as CSV or Parquet format), so that it uses the correct reader to access the data.
+
+# AWS Services that help with Data Governance
+
+## The AWS Glue/Lake Formation technical data catalog
+
+- in addition to cataloging data files in Amazon S3, the AWS Glue Data Catalog can also store schema and metadata information about tables in other databases, such as Amazon Redshift, Amazon RDS, Amazon DynamoDB, and more.
+- One more service AWS Lake Formation, provides just an interface to the technical data catalog along with AWS Glue.
+
+
+## AWS Glue DataBrew for profiling datasets
+- In order to generate profile information on a dataset, you can configure and run a Glue DataBrew profile job. 
+- When the job finishes examining a dataset you can view information about the data profile within the Glue DataBrew console, and you can generate a JSON file that contains profile information for the dataset.
+
+## AWS Glue for Data Quality
+- Glue Data Quality is based on the open-source DeeQu data quality framework, and uses a **Data Quality Definition Language (DQDL)** in order to define data quality rules. 
+- The following are some of the expressions that you can use in DQDL rules to test the quality of a dataset: columnExists, ColumnLength, Completeness, RowCount.
+
+## AWS Key Management Service (KMS) for data encryption
+- AWS KMS simplifies the process of creating and managing security keys for encrypting and decrypting data in AWS. 
+- The AWS KMS service is a core service in the AWS ecosystem, enabling users to easily manage data encryption across several AWS services.
+- There are a large number of AWS services that can work with AWS KMS to enable data encryption, including the following AWS analytical services:
+
+	Amazon AppFlow
+	Amazon Athena
+	Amazon EMR
+	Amazon Kinesis Data Streams/Kinesis Firehose/Kinesis Video Streams
+	Amazon Managed Streaming for Kafka (MSK)
+	Amazon Managed Workflows for Apache Airflow (MWAA)
+	Amazon Redshift
+	Amazon S3
+	AWS Data Migration Service (DMS)
+	AWS Glue/Glue DataBrew
+	AWS Lambda
+	
+
+## Amazon Macie for detecting PII data in Amazon S3 objects
+
+- Amazon Macie is a managed service that uses machine learning, along with pattern matching, to discover and protect sensitive data. 
+- Amazon Macie identifies sensitive data, such as PII data, in an Amazon S3 bucket and provides alerts to warn administrators about the presence of such sensitive data.
+- Macie can also be configured to launch an automated response to the discovery of sensitive data, such as a step function that runs to automatically remediate the potential security risk.
+- Macie can identify items such as names, addresses, and credit card numbers that exist in files on S3
+- Macie can also be configured to recognize custom sensitive data types to alert the user on sensitive data that may be unique to a specific use case.
+
+## AWS Glue Studio Detect PII transform for detecting PII data in datasets
+
+- While Amazon Macie detects PII data directly in S3 files, an alternate option is to use the AWS Glue Studio Detect PII transform to detect PII data during a data processing job. 
+- When creating a job in AWS Glue Studio, you can add the Detect Sensitive Data transform, and configure it based on your requirements. 
+- This includes selecting whether to examine every cell in the dataset for PII data, or whether to just sample a limited number of rows for each column to detect PII data. 
+- You can also select what to do when PII data is detected, including options for redacting the text (replacing it with a preset string), applying a SHA-256 hash to the value, or just reporting on the PII data that is detected.
+
+## Amazon GuardDuty for detecting threats in an AWS account
+
+- GuardDuty is an intelligent threat detection service that uses machine learning to monitor your AWS account and provide proactive alerts about malicious activity and unauthorized behavior.
+- GuardDuty analyzes several AWS generated logs, including the following:
+
+	- CloudTrail S3 data events (a record of all actions taken on S3 objects)
+	- CloudTrail management events (a record of all usage of AWS APIs within an account)
+	- VPC flow logs (a record of all network traffic within an AWS VPC)
+	- DNS logs (a record of all DNS requests within your account)
+
+- By continually analyzing these logs to identify unusual access patterns or data access, Amazon GuardDuty can proactively alert you to potential issues, and also helps you automate your response to threats.
+
+## AWS Identity and Access Management (IAM) service
+
+- AWS IAM is a service that provides both authentication and authorization for the AWS Console, command-line interface (CLI), and application programming interface (API) calls.
+- AWS IAM also supports a federation of identities, meaning that you can configure IAM to use another identity provider for authentication, such as Active Directory or Okta.
+- IAM identities: AWS account root user, IAM User, IAM User Groups, IAM roles.
+- To grant authorization to access AWS resources, you can attach an IAM policy to an IAM user, IAM group, or IAM role. 
+- These policies grant, or deny, access to specific AWS resources, and can also make use of conditional statements to further control access.
+- These identity-based policies are JSON documents that specify the details of access to an AWS resource. 
+- These policies can either be configured within the AWS Management Console, or the JSON documents can be created by hand.
+- There are three types of identity-based policies that can be utilized:
+	- AWS managed policies
+	- Customer managed policies
+	- Inline policies
+
+## Using AWS Lake Formation to manage data lake access
+- Lake Formation enables a data lake administrator to grant fine-grained permissions on data lake databases, tables, and columns using the familiar database concepts of grant and revoke for permissions management. 
+- A data lake administrator, for example, can grant SELECT permissions (effectively READ permission) for a specific data lake table to a specific IAM user or role.
+- Lake Formation permissions management is another layer of permissions that is useful for managing fine-grained access to data lake resources, but it works with IAM permissions and does not replace IAM permissions.
+- With Lake Formation, data lake users do not need to be granted direct permissions on underlying S3 objects as the Lake Formation service can provide temporary credentials to compatible analytic services to access the S3 data.
