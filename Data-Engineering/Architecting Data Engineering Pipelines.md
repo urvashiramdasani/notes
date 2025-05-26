@@ -8,7 +8,7 @@
 
 A useful way to gather this information is to conduct a whiteboarding session with the relevant stakeholders.
 
-![[Pasted image 20250526201230.jpg]]
+![[]](../Data-Engineering/assets/IMG_0039.jpeg)
 
 - Details about the source system containing the data (is the data in a database, in files on a server, existing files on Amazon S3, coming from a streaming source, and so on)?
 - If this data is internal data, who is the owner of the source system within the business? Who is the owner of the data?
@@ -55,7 +55,7 @@ A useful way to gather this information is to conduct a whiteboarding session wi
 - Are other required data transformations obvious at this point? For example, if you're ingesting data from a relational database, should the data be denormalized?
 - What data transformation engines/skills does the team have? For example, does the team have experience creating Spark jobs using PySpark?
 
-![[Pasted image 20250526201257.jpg]]
+![[]](../Data-Engineering/assets/IMG_0043.jpeg)
 
 ## Loading data into data marts
 - there are times where a use case may require much lower latency, higher performance reads of the data. 
