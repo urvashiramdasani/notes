@@ -1,1 +1,0 @@
-Suppose you're building an e-commerce checkout module that involves inventory, payment gateway, shipping, and notifications. How would you design it?
