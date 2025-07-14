@@ -1,1 +1,0 @@
-You're building a document editor application (like Google Docs or MS Word) where users can create different types of documents — reports, resumes, invoices, etc. Each document can have complex formatting, headers, footers, metadata, and layout settings. Users should be able to quickly create a new document by duplicating an existing one. How would you design this?
