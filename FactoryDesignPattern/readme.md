@@ -1,1 +1,0 @@
-You're designing a payment processing system for an e-commerce platform. The platform supports multiple payment methods like Credit Card, UPI, PayPal, and NetBanking. At runtime, based on user selection, the system should instantiate and process the appropriate payment method. How would you design this?
