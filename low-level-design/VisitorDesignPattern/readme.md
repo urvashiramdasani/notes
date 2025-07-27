@@ -19,3 +19,7 @@ Real world use cases
 - File systems: Apply operations like compression, indexing, antivirus scanning
 - Document processing: Convert document elements to HTML, PDF, etc.
 - UI Toolkits: Perform operations on component trees
+
+Think of Strategy like a "plugin": You change how something works.
+
+Think of Visitor like a "guest specialist": They visit your objects and apply external logic to them.
