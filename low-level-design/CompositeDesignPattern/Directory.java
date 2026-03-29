@@ -1,38 +1,51 @@
 package CompositeDesignPattern;
 
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
-public class Directory implements FileSystem {
-    List<FileSystem> fileSystemList;
-    String directoryName;
+public class Directory implements FileSystemElement {
+    private final String name;
+    private Directory parent;
 
-    public Directory(List<FileSystem> fileSystemList, String directoryName) {
-        this.fileSystemList = fileSystemList;
-        this.directoryName = directoryName;
+    // O(1) lookup for children!
+    private final Map<String, FileSystemElement> children;
+
+    public Directory(String name) {
+        this.name = name;
+        this.children = new HashMap<>();
+    }
+
+    public void add(FileSystemElement element) {
+        children.put(element.getName(), element);
+        element.setParent(this);
+    }
+
+    public Map<String, FileSystemElement> getChildren() {
+        return children;
+    }
+
+    @Override
+    public String getName() { return name; }
+
+    @Override
+    public boolean isDirectory() { return true; }
+
+    @Override
+    public Directory getParent() { return parent; }
+
+    @Override
+    public void setParent(Directory parent) { this.parent = parent; }
+
+    @Override
+    public int calculateSize() {
+        return children.values().stream().mapToInt(FileSystemElement::calculateSize).sum();
     }
 
     @Override
     public void showStructure() {
-        System.out.println("Inside directory " + this.directoryName);
-        for (FileSystem fileSystem : fileSystemList) {
-            fileSystem.showStructure();
+        System.out.println("Directory: " + name);
+        for (FileSystemElement child : children.values()) {
+            child.showStructure();
         }
-    }
-
-    @Override
-    public int calculateSize() {
-        int totalSize = 0;
-
-        for (FileSystem fileSystem : fileSystemList) {
-            totalSize += fileSystem.calculateSize();
-        }
-
-        return totalSize;
-    }
-
-    @Override
-    public void rename(String newName) {
-        System.out.println("Directory " + this.directoryName + " renamed to " + newName);
-        this.directoryName = newName;
     }
 }
