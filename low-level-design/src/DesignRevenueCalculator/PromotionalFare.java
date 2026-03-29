@@ -1,12 +1,15 @@
 package DesignRevenueCalculator;
 
 public class PromotionalFare extends FareDecorator {
-    public PromotionalFare(Fare fare) {
+    private final int promoPercent;
+
+    public PromotionalFare(Fare fare, int promoPercent) {
         super(fare);
+        this.promoPercent = promoPercent;
     }
 
     @Override
     public Money getTotalFare() {
-        return this.fare.getTotalFare().applyPercentageDiscount(20);
+        return this.fare.getTotalFare().applyPercentageDiscount(promoPercent);
     }
 }

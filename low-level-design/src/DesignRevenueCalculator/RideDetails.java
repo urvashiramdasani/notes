@@ -4,12 +4,12 @@ import java.util.UUID;
 
 public class RideDetails {
     private final String rideId;
-    private final String rideType;
+    private final RideType rideType;
     private final String source;
     private final String destination;
     private final int distance;
 
-    public RideDetails(String rideType, String source, String destination, int distance) {
+    public RideDetails(RideType rideType, String source, String destination, int distance) {
         this.rideId = UUID.randomUUID().toString();
         this.rideType = rideType;
         this.destination = destination;
@@ -21,7 +21,7 @@ public class RideDetails {
         return this.rideId;
     }
 
-    public String getRideType() {
+    public RideType getRideType() {
         return this.rideType;
     }
 
