@@ -39,7 +39,8 @@ class Cache<K, V> {
             // 3. BACKFILL: If found in a lower level, bring it up to this level
             if (nextResponse.val != null) {
                 if (storage.isFull()) {
-                    K evictedKey = evictionPolicy.evictKey();
+                    K evictedKey = evictionPolicy.evictKey(); // these 2 lines can lead to zombie data when the server
+                    // crashes after eviction but storage still has the key.
                     storage.removeKey(evictedKey);
                 }
                 response.totalTime += cacheAccessTime.writeTime;
